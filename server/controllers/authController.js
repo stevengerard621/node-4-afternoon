@@ -3,6 +3,7 @@ let id = 1;
 
 module.exports = {
     register: (req,res) => {
+        console.log(req.body, req.session)
         const {session} = req;
         const {username, password} = req.body;
 
@@ -15,7 +16,7 @@ module.exports = {
     },
     login: (req,res) => {
         const {session} = req;
-        const{username, password,} = req.body;
+        const{username, password,} = req.body
 
         const user = users.find(user => user.username === username && user.password === password);
 
@@ -32,6 +33,6 @@ module.exports = {
     },
     getUser: (req, res) => {
         const {session} = req;
-        res.start(200).send(session.user);
+        res.status(200).send(session.user);
     }
 }

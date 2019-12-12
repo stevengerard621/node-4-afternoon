@@ -1,6 +1,6 @@
 const swag = require('../models/swag')
 
-module.export = {
+module.exports = {
     
     add: (req,res) => {
         const {id} = req.params;
